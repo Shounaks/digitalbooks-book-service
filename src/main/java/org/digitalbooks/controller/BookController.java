@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@CrossOrigin
 @RequestMapping("/api/v1/digitalbooks/")
 public class BookController {
     @Autowired

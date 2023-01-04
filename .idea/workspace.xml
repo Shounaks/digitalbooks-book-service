@@ -4,26 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e68ce67-a0ce-4c86-a9f5-fe1f081b026a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/BookServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/controller/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/controller/BookControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/entity/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/exception/BookServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/exception/ErrorInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/repository/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/book-service API.postman_collection.json" afterDir="false" />
+    <list default="true" id="6e68ce67-a0ce-4c86-a9f5-fe1f081b026a" name="Changes" comment="Adding Logic">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/config/SwaggerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/exception/BookServiceError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/digitalbooks/BookServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/BookServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/digitalbooks/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/digitalbooks/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +29,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="4049bc5a-2a73-4982-911c-5004204e3c21" />
+        <option name="url" value="https://github.com/Shounaks/digitalbooks-book-service.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -70,6 +72,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Shounak/Desktop/Cognizant_Backend/book-service&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -115,6 +118,18 @@
       <option name="presentableId" value="Default" />
       <updated>1672062647007</updated>
     </task>
+    <task id="LOCAL-00001" summary="Adding Logic">
+      <created>1672739388241</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672739388241</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding Logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Logic" />
   </component>
 </project>
