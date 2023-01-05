@@ -1,6 +1,7 @@
 package org.digitalbooks.service;
 
 //import jakarta.transaction.Transactional;
+
 import org.digitalbooks.entity.Book;
 import org.digitalbooks.exception.BookServiceException;
 import org.digitalbooks.repository.BookRepository;
@@ -8,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -104,13 +104,13 @@ public class BookService {
     public List<Book> retrieveBooksByQuery(String category, String title, String price, String publisher) {
 
         List<Book> booksBySameCategory = filterBlockedBooks(bookRepository.findByCategoryLikeIgnoreCase(category));
-        List<Book> booksBySameTitle = filterBlockedBooks(bookRepository.findByTitleLikeIgnoreCase(title));
-        List<Book> booksBySamePublisher = filterBlockedBooks(bookRepository.findByPublisherLikeIgnoreCase(publisher));
+        List<Book> booksBySameTitle = filterBlockedBooks(bookRepository.findByTitleContainsIgnoreCase(title));
+        List<Book> booksBySamePublisher = filterBlockedBooks(bookRepository.findByPublisherContainsIgnoreCase(publisher));
         List<Book> books = Stream.of(booksBySameCategory, booksBySamePublisher, booksBySameTitle)
                 .flatMap(List::stream).collect(Collectors.toList());
         Optional<Double> priceValue = checkIfPriceIsANum(price);
         if (priceValue.isPresent()) {
-            List<Book> booksByLowerPrice = filterBlockedBooks(bookRepository.findByPriceLessThan(priceValue.get()));
+            List<Book> booksByLowerPrice = filterBlockedBooks(bookRepository.findByPriceLessThanEqual(priceValue.get()));
             books.addAll(booksByLowerPrice);
         }
         return books;
