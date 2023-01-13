@@ -11,10 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 //NOTE: Pre Spring Boot 3.0.0
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -33,6 +30,7 @@ public class Book {
     private Long authorId;
     private String publisher;
     private LocalDate publishedDate;
+    @Lob
     private String content;
     private Boolean blocked;
 
