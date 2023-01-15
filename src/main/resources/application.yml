@@ -1,12 +1,18 @@
 spring:
   application:
     name: bookMS
+
   datasource:
-    username: root
-    password: root
-    url: "jdbc:mysql://localhost:3306/user_db?useSSL=false&allowMultiQueries=true&serverTimezone=UTC"
-  #    driver-class-name: com.mysql.jdbc.driver
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}?useSSL=false&allowMultiQueries=true&serverTimezone=UTC
+#    jdbc:mysql://containers-us-west-147.railway.app:6740/railway?useSSL=false&allowMultiQueries=true&serverTimezone=UTC
+#    driver-class-name: com.mysql.jdbc.driver
+
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
     hibernate:
       ddl-auto: create-drop
@@ -16,3 +22,12 @@ spring:
 
 server:
   port: 8081
+
+
+MYSQL_USER: "root"
+MYSQL_PASSWORD: "NtJQkNXIKvDgYXYi9tHt"
+MYSQL_HOST: "containers-us-west-147.railway.app"
+MYSQL_PORT: 6740
+MYSQL_DATABASE: "railway"
+#MYSQL_URL: "mysql://${{ MYSQL_USER }}:${{ MYSQL_PASSWORD }}@${{ MYSQL_HOST }}:${{ MYSQL_PORT }}/${{ MYSQL_DATABASE }}"
+#MYSQL_URL: ""

@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  book_ms:
+    container_name: bookMS
+    image: openjdk:8
+    build: .
+    volumes:
+      - "./target:/app"
+    command: java -jar target/digitalbook-book-ms.jar
+    ports:
+      - '8080:8080'
+    environment:
+      - MYSQL_USER="root"
+      - MYSQL_PASSWORD="root"
+      - MYSQL_HOST="containers-us-west-147.railway.app"
+      - MYSQL_PORT="6740"
+      - MYSQL_DATABASE="railway"
+      - MYSQL_URL="mysql://${{ MYSQL_USER }}:${{ MYSQL_PASSWORD }}@${{ MYSQL_HOST }}:${{ MYSQL_PORT }}/${{ MYSQL_DATABASE }}"
+      #----------------------------------------------------------------------------MySQL Setup
+  book_db:
+    container_name: book_db_container
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      - book_db_network
+#-------------------------------------------------------------------------------MYSQL Workbench Setup
+  mysql-workbench:
+    image: lscr.io/linuxserver/mysql-workbench
+    container_name: mysql-workbench
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /path/to/config:/config
+    ports:
+      - 3000:3000
+    cap_add:
+      - IPC_LOCK
+    restart: unless-stopped
+    networks:
+      - book_db_network
+#-------------------------------------------------------------------------------NETWORK CONFIG
+networks:
+  mysql_network:
+    driver: bridge
